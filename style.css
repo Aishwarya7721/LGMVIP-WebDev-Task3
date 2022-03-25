@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+  }
+  body{
+      background: #030303;
+      font-family:blacklight;
+  }
+  
+  .column {
+    float: left;
+    width: 50%  ;
+    padding: 10px;
+    height: 600px;
+    border:1px solid white; 
+ 
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  input[type=text], select {
+    width: 50%;
+    color:rgb(68, 66, 66);
+    padding: 10px 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=submit],input[type=reset] {
+    width: 30%;
+    background-color: #f38989;
+    
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #display_image{
+  
+      width:300px;
+      height:300px;
+      border: 1px solid white;
+      background-size: cover;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+  border:1px solid rgb(253, 252, 252);
+    padding: 8px;
+    text-align:justify;
+  
+  }
+  h3,div{
+      color:rgb(255, 255, 255);
+      word-spacing: 20px;
+      
+  }
+  
