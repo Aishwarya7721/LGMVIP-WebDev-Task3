@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<center><h1 style="color:white;background-color:#28a0cf;">STUDENT REGISTRATION FORM</h1></center>
+
+
+<div class="row">
+  <div class="column">
+    <form name='myform'>
+        <h3>NAME: <input type="text" name='name' placeholder="NAME"></h3>
+        <h3>EMAIL: <input type="text" name='email' placeholder="email"></h3>
+        <h3>Admission No.: <input type="text" name='adm' placeholder="Admission Number"></h3>
+        <h3>CLASS:  <input type="radio" id="F.E." value="F.E.">F.E. 
+            <input type="radio" id="S.E." value="S.E.">S.E.
+            <input type="radio" id="T.E." value="T.E.">T.E.
+            <input type="radio" id="B.E." value="B.E.">B.E.
+        </h3>
+     
+        <h3>SKILLS:
+            python<input type="checkbox" id="myCheck1" value="python">
+            html<input type="checkbox" id="myCheck2" value=" html">
+            css<input type="checkbox" id="myCheck3" value=" css">
+        </h3>
+      
+        <h3>SELECT_IMAGE: <input type='file' accept='image/*'  onchange="readURL(this)" ></h3>
+        
+        <center><input type="submit" onclick="check();return false"> <input type="reset" value="Reset"></center>
+    </form>
+  </div>
+  <div class="column">
+      <center>
+    <h2>Enrolled_Student</h2>
+</center>
+
+     
+    <table style="width:100%">
+        <tr>
+          <th style="width:70%;  color:white;">Student-Information</th>
+          <th style="color:beige">Display-Photo</th>
+         
+        </tr>
+        <tr>
+            <td>
+            <div id="f1"></div>
+            <div id="f4"></div>
+            <div id="f2"></div>
+            <div id="f3"></div>
+            <div id="f5"></div>
+            <div id="F6"></div>
+            </td>
+            <td>
+              <center> <img src="" alt="select_image" id="img" style='height:150px;'></center>
+                </td>
+           
+        </tr>
+       
+      </table>  
+    
+  </div>
+</div>
+
+
+
+<script>
+    function check()
+    {
+        document.getElementById('f1').innerHTML=document.myform.name.value;
+        document.getElementById('f2').innerHTML=document.myform.email.value;
+        document.getElementById('f3').innerHTML=document.myform.adm.value;
+
+           
+            if(document.getElementById('F.E.').checked) {   
+                document.getElementById("f4").innerHTML   
+                    = document.getElementById("F.E").value;   
+            }  
+            else if(document.getElementById('S.E.').checked) {   
+                document.getElementById("f4").innerHTML   
+                    = document.getElementById("S.E.").value;    
+            }
+            else if(document.getElementById('T.E.').checked) {   
+                document.getElementById("f4").innerHTML   
+                    = document.getElementById("T.E.").value;    
+            }
+            else if(document.getElementById('B.E.').checked) {   
+                document.getElementById("f4").innerHTML   
+                    = document.getElementById("B.E.").value;    
+            } 
+            
+            var python = document.getElementById("myCheck1");
+            var html = document.getElementById("myCheck2");
+            var css = document.getElementById("myCheck3");
+
+  if (python.checked == true && html.checked == true && css.checked==true){
+  return document.getElementById("f5").innerHTML = "python,"+"html,"+"css";
+   
+  }
+    else if (python.checked == true && html.checked == true){
+  return document.getElementById("f5").innerHTML = "python,"+"html";
+   
+  }
+  
+  else if (python.checked == true && css.checked == true){
+  return document.getElementById("f5").innerHTML = "python,"+"css";
+   
+  }
+  else if (html.checked == true && css.checked == true){
+  return document.getElementById("f5").innerHTML = "html,"+"css";
+   
+  }
+  else if (python.checked == true){
+    var j = document.getElementById("myCheck1").value;
+    return document.getElementById("f5").innerHTML = j; 
+  } 
+  else if (html.checked == true){
+    var h = document.getElementById("myCheck2").value;
+    return document.getElementById("f5").innerHTML = h;
+  }
+  else if (css.checked == true){
+    var c = document.getElementById("myCheck3").value;
+    return document.getElementById("f5").innerHTML = c;
+  } 
+  
+}
+function readURL(input) {
+    if (input.files && input.files[0]) {
+    
+      var reader = new FileReader();
+      reader.onload = function (e) { 
+        document.querySelector("#img").setAttribute("src",e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]); 
+    }
+  }
+       
+              
+    
+</script>
+
+</body>
+</html>
